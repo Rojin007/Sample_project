@@ -8,6 +8,7 @@ const createUser = async (name, phone, password) => {
   const phoneExist = await user.findOne({ phone });
   if (phoneExist) {
     //this.send("phone already exist");
+
     console.log("phone already exist");
     return;
   }
