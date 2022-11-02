@@ -1,4 +1,4 @@
-const user = require("../../../Models/Schemas");
+const user = require("../../../Models/Schemas/user");
 const { verifyPassword } = require("../../../Utils/hashed");
 const { generateAccessToken } = require("../../../Utils/jwt");
 

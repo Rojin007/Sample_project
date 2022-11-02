@@ -1,7 +1,7 @@
 const { generateHash } = require("../../Utils/hashed");
 const { generateId } = require("../../Utils/randomGen");
 
-const user = require("../Schemas");
+const user = require("../Schemas/user");
 const createUser = async (name, phone, password) => {
   const uid = generateId();
   const pwd = await generateHash(password);
