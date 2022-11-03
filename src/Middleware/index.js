@@ -8,10 +8,7 @@ process.env.TOKEN_SECRET;
 
 const authenticateTokens = async (req, res, next) => {
   console.log(req.headers.authorization.split(" ")[1]);
-  const token = req.headers?.authorization?.split("  ")[1];
-  const tokens = req.headers?.authorization?.split("  ")[1];
-  console.log("vannilada token");
-  console.log(tokens);
+
   if (req.headers.authorization.split(" ")[1] == null)
     return res.sendStatus(401);
 
