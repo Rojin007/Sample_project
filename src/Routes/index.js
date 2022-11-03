@@ -18,7 +18,8 @@ router.get("/post-view", authenticateToken, GetBlog);
 router.post("/post-like", authenticateToken, LikePost);
 router.post("/post-delete", authenticateToken, DeletePost);
 router.post("/post-Update", authenticateToken, UpdatePost);
-
+//little bug in routes line no.16-20
+//Use the routes from line no. 23-27
 router.post("/post-contents", authenticateTokens, CreateBlog);
 router.get("/post-views", authenticateTokens, GetBlog);
 router.post("/post-likes", authenticateTokens, LikePost);
