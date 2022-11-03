@@ -33,4 +33,22 @@ const likeBlog = async (userId, id) => {
     return false;
   }
 };
-module.exports = { createBlog, getBlog, likeBlog };
+const deleteBlog = async (userId, id) => {
+  const result = await post.findOneAndRemove({ id });
+  console.log(result);
+  if (result) {
+    return true;
+  } else {
+    return false;
+  }
+};
+const updateBlog = async (userId, id, title, content) => {
+  const result = await post.findOneAndUpdate({ id }, { title, content });
+  console.log(result);
+  if (result) {
+    return true;
+  } else {
+    return false;
+  }
+};
+module.exports = { createBlog, getBlog, likeBlog, deleteBlog, updateBlog };
