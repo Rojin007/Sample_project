@@ -10,6 +10,8 @@ const createBlog = async (title, content, userId) => {
   });
   if (result) {
     return true;
+  } else {
+    return false;
   }
 };
 const getBlog = async (userId) => {
@@ -21,4 +23,14 @@ const getBlog = async (userId) => {
     return false;
   }
 };
-module.exports = { createBlog, getBlog };
+const likeBlog = async (userId, id) => {
+  const posts = await post.findOne({ id });
+  const result = await posts.updateOne({ $push: { like: userId } });
+  console.log(result);
+  if (result) {
+    return true;
+  } else {
+    return false;
+  }
+};
+module.exports = { createBlog, getBlog, likeBlog };

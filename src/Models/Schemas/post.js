@@ -9,12 +9,17 @@ const postSchema = new mongoose.Schema(
       type: String,
     },
     comment: {
-      type: String,
+      type: Array,
+      default: [],
     },
-    Like: {
-      type: String,
+    like: {
+      type: Array,
+      default: [],
     },
-    Dislike: { type: String },
+    dislike: {
+      type: Array,
+      default: [],
+    },
     userId: { type: String },
   },
   { timestamps: true }
