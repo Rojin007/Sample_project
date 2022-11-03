@@ -12,4 +12,13 @@ const createBlog = async (title, content, userId) => {
     return true;
   }
 };
-module.exports = { createBlog };
+const getBlog = async (userId) => {
+  const result = await post.find({ userId });
+
+  if (result) {
+    return result;
+  } else {
+    return false;
+  }
+};
+module.exports = { createBlog, getBlog };
