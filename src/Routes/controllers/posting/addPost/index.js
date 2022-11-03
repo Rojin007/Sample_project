@@ -9,7 +9,7 @@ const CreateBlog = async (req, res) => {
   const users = await user.findOne({ name });
   const userId = users.id;
   console.log(userId);
-  const result = createBlog(title, content, userId);
+  const result = await createBlog(title, content, userId);
   if (result) {
     res.send("successfully created post");
   } else {

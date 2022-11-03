@@ -12,9 +12,9 @@ const generateAccessToken = (username) => {
   return jwt.sign(username, process.env.TOKEN_SECRET);
 };
 
-const authenticateToken = (req, res, next) => {
+const authenticateToken = async (req, res, next) => {
   const token = req.headers?.authorization?.split("  ")[1];
-
+  console.log("vannilada token");
   console.log(token);
   if (token == null) return res.sendStatus(401);
 

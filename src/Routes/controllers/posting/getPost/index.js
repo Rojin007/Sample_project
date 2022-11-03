@@ -21,4 +21,5 @@ const GetBlog = async (req, res) => {
     res.send("failed to get");
   }
 };
+
 module.exports = { GetBlog };

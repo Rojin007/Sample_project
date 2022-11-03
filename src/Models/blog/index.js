@@ -1,13 +1,14 @@
 const { generateId } = require("../../Utils/randomGen");
 const post = require("../Schemas/post");
 const createBlog = async (title, content, userId) => {
-  const uid = generateId();
+  const uid = await generateId();
   const result = await post.create({
     id: uid,
     title,
     content,
     userId,
   });
+  console.log(result);
   if (result) {
     return true;
   } else {
