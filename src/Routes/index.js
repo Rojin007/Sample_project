@@ -3,7 +3,6 @@ const { CreateUserValidation } = require("./validators");
 const express = require("express");
 const { userLogin } = require("./controllers/login");
 const { CreateBlog } = require("./controllers/posting/addPost");
-const { authMiddleware } = require("../MiddleWare");
 const { authenticateToken } = require("../Utils/jwt");
 const { GetBlog } = require("./controllers/posting/getPost");
 const router = express.Router();
