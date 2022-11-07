@@ -4,7 +4,7 @@ const express = require("express");
 const { userLogin } = require("./controllers/login");
 const { CreateBlog } = require("./controllers/posting/addPost");
 const { authenticateToken } = require("../Utils/jwt");
-const { GetBlog } = require("./controllers/posting/getPost");
+const { GetBlog, GetPosts } = require("./controllers/posting/getPost");
 const { LikePost } = require("./controllers/posting/likePost");
 const { DeletePost } = require("./controllers/posting/deletePost");
 const { UpdatePost } = require("./controllers/posting/updatePost");
@@ -26,6 +26,7 @@ router.post("/post-likes", authenticateTokens, LikePost);
 router.post("/post-deletes", authenticateTokens, DeletePost);
 router.post("/post-Updates", authenticateTokens, UpdatePost);
 
+router.get("/post-all", GetPosts);
 router.get("/login", userLogin);
 
 module.exports = router;

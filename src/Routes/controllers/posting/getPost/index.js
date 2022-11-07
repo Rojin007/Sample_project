@@ -21,5 +21,15 @@ const GetBlog = async (req, res) => {
     res.send("failed to get");
   }
 };
+const GetPosts = async (req, res) => {
+  const result = await post.find({});
+  const view = await blogMap(result);
+  console.log(view);
+  if (result) {
+    res.send(view);
+  } else {
+    res.send("failed to get");
+  }
+};
 
-module.exports = { GetBlog };
+module.exports = { GetBlog, GetPosts };
